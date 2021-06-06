@@ -5,8 +5,11 @@ import org.springframework.lang.NonNull;
 
 import javax.persistence.*;
 
+/**
+ * TODO @Muskan
+ */
+
 @Data
-@Entity
 public class TaxRate {
 
     @Id

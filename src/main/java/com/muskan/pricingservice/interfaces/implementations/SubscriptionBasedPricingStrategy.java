@@ -4,6 +4,9 @@ import com.muskan.pricingservice.interfaces.PricingStrategy;
 
 import java.math.BigDecimal;
 
+import static com.muskan.pricingservice.constants.Constants.PRICE_ROUNDING_MODE;
+import static com.muskan.pricingservice.constants.Constants.PRICE_ROUNDING_UPTO;
+
 public class SubscriptionBasedPricingStrategy implements PricingStrategy
 {
     /**
@@ -15,7 +18,7 @@ public class SubscriptionBasedPricingStrategy implements PricingStrategy
     @Override
     public BigDecimal getAmount(BigDecimal courseFee) {
 
-        return courseFee.divide(BigDecimal.valueOf(12));
+        return courseFee.divide(BigDecimal.valueOf(12),PRICE_ROUNDING_UPTO, PRICE_ROUNDING_MODE);
     }
 
     /**
@@ -25,6 +28,6 @@ public class SubscriptionBasedPricingStrategy implements PricingStrategy
      * @return amount for N months subscription
      */
     public BigDecimal getAmountForNMonths(BigDecimal courseFee, int month) {
-        return courseFee.divide(BigDecimal.valueOf(12)).multiply(BigDecimal.valueOf(month));
+        return courseFee.divide(BigDecimal.valueOf(12),PRICE_ROUNDING_UPTO, PRICE_ROUNDING_MODE).multiply(BigDecimal.valueOf(month));
     }
 }
