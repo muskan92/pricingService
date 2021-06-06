@@ -58,7 +58,7 @@ public class PricingServiceManager {
 
         coursePriceDetailsResponse.setBasePrice(coursePriceDetailsResponse.getBasePrice().divide(countryCode.getConversionRateBaseINR(), PRICE_ROUNDING_UPTO, PRICE_ROUNDING_MODE));
 
-        coursePriceDetailsResponse.setTaxesInPercent(coursePriceDetailsResponse.getTaxesInPercent().divide(countryCode.getConversionRateBaseINR(), 3, PRICE_ROUNDING_MODE));
+        coursePriceDetailsResponse.setTaxesInPercent(coursePriceDetailsResponse.getTaxesInPercent().divide(countryCode.getConversionRateBaseINR(), PRICE_ROUNDING_UPTO, PRICE_ROUNDING_MODE));
 
         return calculateAndUpdateNetPrice(coursePriceDetailsResponse);
 
