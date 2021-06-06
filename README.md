@@ -4,7 +4,7 @@ Project for Pricing Service For an Online Course Portal
 #Project SetUp
     Install and setUp Java
     Install and setUp Maven
-    Run the following command on terminal
+    Run the following command on terminal after unzipping the project
         mvn clean install -U
         mvn clean test
         mvn spring-boot:run
